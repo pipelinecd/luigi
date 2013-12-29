@@ -7,12 +7,12 @@
         {
           "id": "1",
           "name": "compile",
-          "status": "SUCCES"
+          "status": "SUCCESS"
         },
         {
           "id": "2",
           "name": "build",
-          "status": "SUCCES"
+          "status": "SUCCESS"
 
         },
         {
