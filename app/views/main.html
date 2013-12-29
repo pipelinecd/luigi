@@ -14,7 +14,7 @@
 
     <div class="panel panel-default" ng-repeat="pipeline in pipelines | filter:query | orderBy:'creationTime':'reverse'" ng-controller="PipelineDetails">
         <div class="panel-heading clearfix">
-            <h3 class="panel-title pull-left">{{pipeline.name}}</h3>
+            <h3 class="panel-title pull-left"><a href="#/project/{{pipeline.id}}">{{pipeline.name}}</a></h3>
             <small class="pull-right">{{pipeline.creationTime | date:'dd-MM-yyyy'}}</small>
         </div>
         <div class="panel-body">
