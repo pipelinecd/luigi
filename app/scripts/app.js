@@ -14,8 +14,8 @@ angular.module('luigiApp', [
                 controller: 'MainCtrl'
             })
             .when('/runs/:runId', {
-                templateUrl: 'views/pipeline.html',
-                controller: 'PipelineCtrl'
+                templateUrl: 'views/pipelineRun.html',
+                controller: 'PipelineRunCtrl'
             })
             .otherwise({
                 redirectTo: '/'

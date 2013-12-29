@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('luigiApp')
-    .controller('PipelineCtrl', ['$scope', '$routeParams', 'PipelineRun',
+    .controller('PipelineRunCtrl', ['$scope', '$routeParams', 'PipelineRun',
         function ($scope, $routeParams, PipelineRun) {
             $scope.pipeline = PipelineRun.query({runId: $routeParams.runId});
 
