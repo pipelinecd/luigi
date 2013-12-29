@@ -4,7 +4,8 @@ angular.module('luigiApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
-        'ngRoute'
+        'ngRoute',
+        'pipelineServices'
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -17,8 +18,8 @@ angular.module('luigiApp', [
                 controller: 'PipelineDetails'
             })
             .when('/runs/:runId', {
-                templateUrl: 'views/pipeline.html',
-                controller: 'PipelineCtrl'
+                templateUrl: 'views/pipelineRun.html',
+                controller: 'PipelineRunCtrl'
             })
             .otherwise({
                 redirectTo: '/'
