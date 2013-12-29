@@ -21,7 +21,16 @@ angular.module('luigiApp', [
                 templateUrl: 'views/run.html',
                 controller: 'PipelineRunCtrl'
             })
+            .when('/project/:projectId', {
+                templateUrl: 'views/project.html',
+                controller: 'ProjectRunCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+    })
+    .filter('fromNow', function() {
+        return function(date) {
+            return moment(date).fromNow();
+        }
     });
