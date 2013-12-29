@@ -5,20 +5,25 @@
 </ul>
 
 <div id="pipelines">
-    <p>
-
-    <div class="row">
-        <span>Job {{pipe.name}}</span>
-        <span  class="col-lg-3 pull-right" ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span>
-        <span class="col-lg-3 pull-right">{{pipeline.creationTime | date:'dd-MM-yyyy mm:hh:ss'}}</span>
-    </div>
-
-    <div ng-repeat="stage in pipeline.stages">
-        <div ng-class="getFlowLabelClass(stage.status)">
-            <span>{{stage.name}}</span>
-            <span>{{stage.status}}</span><br/>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="clearfix">
+                <span class="col-lg-6">Job {{pipe.name}}</span>
+                <span class="col-lg-3">{{pipeline.creationTime | date:'dd-MM-yyyy hh:mm:ss'}}</span>
+                <span class="col-lg-3" ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span>
+            </div>
         </div>
-        <div class="glyphicon glyphicon-arrow-down">&nbsp;</div>
+        <div class="panel-body">
+            <div ng-repeat="stage in pipeline.stages">
+                <div ng-class="getFlowLabelClass(stage.status)">
+                    <span>{{stage.name}}</span>
+                    <span>{{stage.status}}</span><br/>
+                </div>
+                <p class="arrow glyphicon glyphicon-arrow-down">&nbsp;</p>
+            </div>
+        </div>
     </div>
-    </p>
+
+
+
 </div>
