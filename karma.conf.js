@@ -1,14 +1,13 @@
-// Contents of: config/karma.conf.js
 module.exports = function (config) {
   config.set({
-    basePath : '../',
+    basePath : './',
 
     // Fix for "JASMINE is not supported anymore" warning
     frameworks : ["jasmine"],
 
     files : [
-      'app/components/angular/angular.js',
-      'app/components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
@@ -20,7 +19,6 @@ module.exports = function (config) {
     port : 9876,
     runnerPort : 9100,
     colors : true,
-//    logLevel : LOG_INFO,
     captureTimeout : 5000,
     singleRun : false,
     browsers : ['Chrome'],
@@ -28,7 +26,6 @@ module.exports = function (config) {
     junitReporter : {
       outputFile : 'test_out/unit.xml',
       suite      : 'unit'
-      //...
     }
 
 
