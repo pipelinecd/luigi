@@ -18,7 +18,7 @@ angular.module('luigiApp', [
                 controller: 'PipelineDetails'
             })
             .when('/runs/:runId', {
-                templateUrl: 'views/pipelineRun.html',
+                templateUrl: 'views/pipeline-run.html',
                 controller: 'PipelineRunCtrl'
             })
             .otherwise({
