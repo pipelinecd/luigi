@@ -1,9 +1,17 @@
 'use strict';
 
 angular.module('luigiApp')
-    .controller('PipelineRunCtrl', ['$scope', '$routeParams', 'PipelineRun',
-        function ($scope, $routeParams, PipelineRun) {
-            $scope.pipeline = PipelineRun.query({runId: $routeParams.runId});
+    .controller('PipelineRunCtrl', ['$scope', '$routeParams', 'PipelineRun', '$http',
+        function ($scope, $routeParams, PipelineRun, $http) {
+//        =PipelineRun.query({runId: $routeParams.runId});
+
+            $http.get('http://api.pipelinecd.com/runs/'+$routeParams.runId).success(function(run) {
+                  $scope.pipeline = run;
+                    $http.get('http://api.pipelinecd.com/pipelines/'+run.pipelineId).success(function(pipelines) {
+                          $scope.pipe = pipelines;
+                      });
+
+              });
 
             $scope.getStatusLabelClass = function (someValue) {
                 if (someValue == "RUNNING")
