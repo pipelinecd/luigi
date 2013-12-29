@@ -2,5 +2,12 @@
     <p>
         <span>{{pipeline.id}}</span>
         <span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span>
+
+        <div ng-repeat="stage in pipeline.stages">
+            <div>
+                <span>{{stage.id}}</span>
+                <span>{{stage.status}}</span>
+            </div>
+        </div>
     </p>
 </div>

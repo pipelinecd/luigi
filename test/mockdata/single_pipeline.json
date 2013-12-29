@@ -2,7 +2,7 @@
        "id": "2fde8a18-dd2c-4503-9dcb-dd3308d83437",
        "creationTime": 1387968340000,
        "status": "RUNNING",
-       "currentStage": "deploy"
+       "currentStage": "deploy",
        "stages": [
         {
           "id": "1",
