@@ -4,7 +4,8 @@ angular.module('luigiApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
-        'ngRoute'
+        'ngRoute',
+        'pipelineServices'
     ])
     .config(function ($routeProvider) {
         $routeProvider
