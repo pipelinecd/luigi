@@ -3,12 +3,12 @@
 angular.module('luigiApp')
     .controller('PipelineDetails', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
-        var allRuns = [];
+        $scope.allRuns = [];
         var runs = [];
 
         $http.get('http://api.pipelinecd.com/pipelines/' + $scope.pipeline.id + '/runs').success(function (runs) {
-            allRuns = runs;
-            $scope.runs = $(allRuns).slice(0, 1);
+            $scope.allRuns = runs;
+            $scope.runs = $(runs).slice(0, 1);
 
         });
 
@@ -26,11 +26,11 @@ angular.module('luigiApp')
         };
 
         $scope.loadMore = function (amount) {
-            if($scope.runs.length >= allRuns.length) {
+            if($scope.runs.length >= $scope.allRuns.length) {
                 return;
             }
             for(var i = 0; i < amount; i++) {
-                $scope.runs.push(allRuns[$scope.runs.length]);
+                $scope.runs.push($scope.allRuns[$scope.runs.length]);
             }
         };
     }]);
