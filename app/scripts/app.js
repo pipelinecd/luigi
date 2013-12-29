@@ -12,7 +12,7 @@ angular.module('luigiApp', [
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
             })
-            .when('/pipeline/:id', {
+            .when('/runs/:runId', {
                 templateUrl: 'views/pipeline.html',
                 controller: 'PipelineCtrl'
             })

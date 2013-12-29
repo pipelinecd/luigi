@@ -1,6 +1,6 @@
 <div id="pipelines">
     <p>
         <span>{{pipeline.id}}</span>
-        <span>{{pipeline.status}}</span>
+        <span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span>
     </p>
 </div>
