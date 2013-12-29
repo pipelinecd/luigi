@@ -1,13 +1,14 @@
 <div id="pipelines">
     <p>
-        <span>{{pipeline.id}}</span>
+        <span>Job {{pipeline.creationTime}}</span>
         <span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span>
 
-        <div ng-repeat="stage in pipeline.stages">
-            <div>
-                <span>{{stage.id}}</span>
-                <span>{{stage.status}}</span>
-            </div>
+    <div ng-repeat="stage in pipeline.stages">
+        <div ng-class="getFlowLabelClass(stage.status)">
+            <span>{{stage.name}}</span>
+            <span>{{stage.status}}</span><br/>
         </div>
+        <div class="glyphicon glyphicon-arrow-down">&nbsp;</div>
+    </div>
     </p>
 </div>

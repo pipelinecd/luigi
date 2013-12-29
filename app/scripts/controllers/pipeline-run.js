@@ -17,4 +17,17 @@ angular.module('luigiApp')
                 else
                     return "label label-default";
             }
+
+            $scope.getFlowLabelClass = function (someValue) {
+                if (someValue == "RUNNING")
+                    return "alert alert-info"
+                else if (someValue == "FAILED")
+                    return "alert alert-danger";
+                else if (someValue == "SUCCESS")
+                    return "alert alert-success";
+                else if (someValue == "NEED_ACTION")
+                    return "alert alert-warning";
+                else
+                    return "alert alert-warning";
+            }
         }]);
