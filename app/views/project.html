@@ -1,0 +1,29 @@
+<ul class="breadcrumb">
+    <li><a href="#" alt="Back to the pipelines">Pipelines</a></li>
+    <li class="active">{{pipe.name}}</li>
+</ul>
+
+<div id="pipelines">
+    <p>
+
+    <div class="row">
+        <span>Job {{pipe.name}}</span>
+    </div>
+
+    <div ng-repeat="pipeline in pipelines">
+        <div>
+            <h3><a href="#/run/{{pipeline.id}}" alt="{{pipeline.id}}">{{pipeline.id}}</a></h3>
+        </div>
+
+        <div ng-repeat="stage in pipeline.stages" style="border:1px solid black; padding: 10px;">
+            <div>
+                <div ng-class="getFlowLabelClass(stage.status)">
+                    <span>{{stage.name}}</span>
+                    <span>{{stage.status}}</span><br/>
+                </div>
+                <div class="glyphicon glyphicon-arrow-down">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    </p>
+</div>
