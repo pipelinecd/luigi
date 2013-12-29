@@ -3,8 +3,13 @@
 angular.module('luigiApp')
     .controller('PipelineDetails', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
+        var allRuns = [];
+        var runs = [];
+
         $http.get('http://api.pipelinecd.com/pipelines/' + $scope.pipeline.id + '/runs').success(function (runs) {
-            $scope.runs = runs;
+            allRuns = runs;
+            $scope.runs = $(allRuns).slice(0, 1);
+
         });
 
         $scope.getStatusLabelClass = function (someValue) {
@@ -18,5 +23,14 @@ angular.module('luigiApp')
                 return "label label-warning";
             else
                 return "label label-default";
+        };
+
+        $scope.loadMore = function (amount) {
+            if($scope.runs.length >= allRuns.length) {
+                return;
+            }
+            for(var i = 0; i < amount; i++) {
+                $scope.runs.push(allRuns[$scope.runs.length]);
+            }
         };
     }]);
