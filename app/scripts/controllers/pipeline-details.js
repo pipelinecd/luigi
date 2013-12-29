@@ -25,6 +25,19 @@ angular.module('luigiApp')
                 return "label label-default";
         };
 
+        $scope.getStatusName = function (someValue) {
+            if (someValue === "RUNNING")
+                return "Running";
+            else if (someValue === "FAILED")
+                return "Failed";
+            else if (someValue === "SUCCESS")
+                return "Success";
+            else if (someValue === "NEED_ACTION")
+                return "Need action";
+            else
+                return "Unknown";
+        };
+
         $scope.loadMore = function (amount) {
             if($scope.runs.length >= $scope.allRuns.length) {
                 return;

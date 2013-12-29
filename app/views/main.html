@@ -32,7 +32,7 @@
                     <tr ng-repeat="run in runs">
                         <td><a href="#/run/{{run.id}}" alt="{{run.id}}">{{run.id}}</a></td>
                         <td>{{run.creationTime | fromNow }}</td>
-                        <td><span ng-class="getStatusLabelClass(run.status)">{{run.status}}</span></td>
+                        <td><span ng-class="getStatusLabelClass(run.status)">{{getStatusName(run.status)}}</span></td>
                     </tr>
                     </tbody>
                 </table>
