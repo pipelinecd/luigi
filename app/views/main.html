@@ -7,13 +7,13 @@
   <table class="table">
       <thead>
         <tr>
-            <th>Name</th>
+            <th>ID</th>
             <th>Status</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="pipeline in pipelines">
-            <td>{{pipeline.name}}</td>
+            <td>{{pipeline.id}}</td>
             <td><span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span></td>
         </tr>
       </tbody>

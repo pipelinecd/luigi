@@ -2,9 +2,9 @@
 
 angular.module('luigiApp')
   .controller('MainCtrl', function ($scope, $http) {
-    //$http.get('http://api.admin.pipelinecd.com/pipelines').success(function(data) {
-        $scope.pipelines = [{name: 'Pipeline 1', status: 'RUNNING'}, {name: 'Pipeline 2', status: 'FAILED'}, {name: 'Pipeline 3', status: 'SUCCESS'}, {name: 'Pipeline 3', status: 'NEED_ACTION'}];
-    //});
+    $http.get('http://api.pipelinecd.com/pipeline').success(function(data) {
+        $scope.pipelines = data;
+    });
 
     $scope.getStatusLabelClass= function(someValue){
         if(someValue=="RUNNING")
