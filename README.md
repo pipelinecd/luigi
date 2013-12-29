@@ -10,12 +10,21 @@ To get started:
     npm install  
     bower install  
 
-To run the application
+To run the application:
+
     grunt serve [--force]
 
-To run tests
-    cd ./test
+Testing
+------
+
+To start karma (from Luigi directory):
+
     karma start
+
+To run tests:
+
+    karma run
+
 
 Errors
 ------
