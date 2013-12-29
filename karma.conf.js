@@ -7,8 +7,8 @@ module.exports = function (config) {
     frameworks : ["jasmine"],
 
     files : [
-      'app/bower-components/angular/angular.js',
-      'app/bower-components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
