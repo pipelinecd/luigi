@@ -20,6 +20,12 @@
         <div class="panel-body">
 
             <div id="runs">
+                <div>
+                    <div ng-repeat="state in currentState">
+                        <span ng-class="getStatusLabelClass(state.status)">{{state.name}}</span>
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </div>
+                </div>
                 <table class="table">
                     <thead>
                     <tr>

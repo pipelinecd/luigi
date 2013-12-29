@@ -9,7 +9,32 @@ angular.module('luigiApp')
         $http.get('http://api.pipelinecd.com/pipelines/' + $scope.pipeline.id + '/runs').success(function (runs) {
             $scope.allRuns = runs;
             $scope.runs = $(runs).slice(0, 1);
+            $scope.currentState = new Array();
 
+            if (runs.length > 0) {
+                var status = runs[0].status;
+
+                // TODO: REFACTOR THIS PART
+                if (status === "RUNNING") {
+                    var currentStageNum = -1;
+                    for (var i = 0; i < runs[0].stages.length; i++) {
+                        if (runs[0].stages[i].status != 'SUCCESS') {
+                            currentStageNum = i;
+                            break;
+                        }
+                    }
+
+                    if (currentStageNum > 0) {
+                        $scope.currentState[0] = runs[0].stages[currentStageNum - 1];
+                    }
+
+                    $scope.currentState[1] = runs[0].stages[currentStageNum];
+
+                    if (currentStageNum < runs[0].stages.length) {
+                        $scope.currentState[2] = runs[0].stages[currentStageNum + 1];
+                    }
+                }
+            }
         });
 
         $scope.getStatusLabelClass = function (someValue) {
@@ -26,10 +51,10 @@ angular.module('luigiApp')
         };
 
         $scope.loadMore = function (amount) {
-            if($scope.runs.length >= $scope.allRuns.length) {
+            if ($scope.runs.length >= $scope.allRuns.length) {
                 return;
             }
-            for(var i = 0; i < amount; i++) {
+            for (var i = 0; i < amount; i++) {
                 $scope.runs.push($scope.allRuns[$scope.runs.length]);
             }
         };
