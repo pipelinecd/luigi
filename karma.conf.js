@@ -7,11 +7,12 @@ module.exports = function (config) {
     frameworks : ["jasmine"],
 
     files : [
-      'app/lib/angular/angular.js',
-      'app/lib/angular/angular-*.js',
-      'test/lib/angular/angular-mocks.js',
-      'app/js/**/*.js',
-      'test/unit/**/*.js'
+      'app/components/angular/angular.js',
+      'app/components/angular-mocks/angular-mocks.js',
+      'app/scripts/*.js',
+      'app/scripts/**/*.js',
+      'test/mock/**/*.js',
+      'test/spec/**/*.js'
     ],
 
     autoWatch : true,
