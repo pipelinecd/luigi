@@ -29,8 +29,12 @@ angular.module('luigiApp')
             if($scope.runs.length >= $scope.allRuns.length) {
                 return;
             }
+
             for(var i = 0; i < amount; i++) {
-                $scope.runs.push($scope.allRuns[$scope.runs.length]);
+                var toPush = $scope.allRuns[$scope.runs.length];
+                if(toPush != null) {
+                    $scope.runs.push(toPush);
+                }
             }
         };
     }]);
