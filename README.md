@@ -14,10 +14,14 @@ To run the application:
 
     grunt serve [--force]
 
-To run tests:
+To run tests, from the root:
 
-    cd ./test
     karma start
+
+And to run the tests:
+
+    karma run
+
 
 Errors
 ------
