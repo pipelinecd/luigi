@@ -2,14 +2,14 @@
   <table class="table">
       <thead>
         <tr>
-            <th>ID</th>
-            <th>Status</th>
+            <th>Name</th>
+            <th>Created</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="pipeline in pipelines">
-            <td><a href="pipeline/{{pipeline.id}}" alt="{{pipeline.id}}">{{pipeline.id}}</a></td>
-            <td><span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span></td>
+            <td><a href="#/pipelines/{{pipeline.id}}" alt="{{pipeline.name}}">{{pipeline.name}}</a></td>
+            <td>{{pipeline.creationTime}}</td>
         </tr>
       </tbody>
   </table>
