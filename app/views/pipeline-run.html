@@ -1,6 +1,11 @@
+<ul class="breadcrumb">
+    <li><a href="#" alt="Back to the pipelines">Pipelines</a></li>
+    <li class="active">{{pipeline.id}}</li>
+</ul>
+
 <div id="pipelines">
     <p>
-        <span>Job {{pipeline.creationTime}}</span>
+        <span>Job {{pipeline.name}}  {{pipeline.creationTime}}</span>
         <span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span>
 
     <div ng-repeat="stage in pipeline.stages">
