@@ -14,11 +14,14 @@ To run the application:
 
     grunt serve [--force]
 
-To run tests, from the root:
+Testing
+------
+
+To start karma (from Luigi directory):
 
     karma start
 
-And to run the tests:
+To run tests:
 
     karma run
 

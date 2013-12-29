@@ -2,15 +2,13 @@
   <table class="table">
       <thead>
         <tr>
-            <th>&nbsp;</th>
             <th>ID</th>
             <th>Status</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="pipeline in pipelines">
-            <td><span class="glyphicon glyphicon-cog"></span></td>
-            <td>{{pipeline.id}}</td>
+            <td><a href="pipeline/{{pipeline.id}}" alt="{{pipeline.id}}">{{pipeline.id}}</a></td>
             <td><span ng-class="getStatusLabelClass(pipeline.status)">{{pipeline.status}}</span></td>
         </tr>
       </tbody>
