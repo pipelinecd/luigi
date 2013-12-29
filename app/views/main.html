@@ -1,9 +1,17 @@
-<div>Search: <input ng-model="query"/></div>
+<form action="#" class="form-horizontal">
+<div id="search" class="form-group clearfix">
+    <div class="col-lg-3 pull-right">
+        <input id="query" class="form-control" ng-model="query" placeholder="Search"/>
+    </div>
+</div>
+</form>
+
 <div id="pipelines">
 
     <div class="panel panel-default" ng-repeat="pipeline in pipelines | filter:query | orderBy:'creationTime':'reverse'" ng-controller="PipelineDetails">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{pipeline.name}} <small>{{pipeline.creationTime | date:'dd-MM-yyyy'}}</small></h3>
+        <div class="panel-heading clearfix">
+            <h3 class="panel-title pull-left">{{pipeline.name}}</h3>
+            <small class="pull-right">{{pipeline.creationTime | date:'dd-MM-yyyy'}}</small>
         </div>
         <div class="panel-body">
 
