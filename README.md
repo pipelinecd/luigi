@@ -5,8 +5,7 @@ Developer web-UI
 
 To get started:
 
-    sudo npm install -g yo grunt-cli bower
-    sudo npm install -g karma
+    sudo npm install -g yo grunt-cli bower karma
     npm install  
     bower install  
 
@@ -26,7 +25,9 @@ And to run the tests:
 Errors
 ------
 If you get 
-   TypeError: Cannot read property 'stdout' of undefined
+   
+    TypeError: Cannot read property 'stdout' of undefined
 
 Run:
-   gem install compass
+   
+    gem install compass
